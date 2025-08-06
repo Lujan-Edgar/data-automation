@@ -1,20 +1,30 @@
 # data-automation
 
-This portfolio contains scripts and notebooks I developed to automate data processing for my team.  
+This portfolio contains scripts and notebooks I developed to automate data processing for my team at **HDM Capital Renewable Finance**.  
 The focus is on **cleaning Excel notebooks, automating repetitive processes, and delivering organized results**—primarily for business deals across US states.
 
 ## Projects
 
-- **automate_deal_list/**:  
-  Python (pandas) notebook for cleaning and structuring Excel files—removes duplicates and organizes Texas deal data for efficient team workflow.
+- **automate_deal_list/**  
+  Python (pandas) notebook for automating the UCC Filing process.  
+  This project was originally written as a MATLAB Live Script and allowed my team and I to automate the preparation of our shared Excel notebook for revision.  
+  In short, it reads a `.txt` file containing a list of deal names, and uses these names to automatically assign the status of each UCC document from "Sent" to "Done" (meaning it has been uploaded to the CRM).
 
-- **hurricane_harvey_matlab/**:  
-  MATLAB Live Script analyzing Hurricane Harvey data, with a focus on data wrangling and visualization.
+- **sort_ucc/matlab/**  
+  My second major contribution to the team. This MATLAB Live Script ensured our main Excel notebook was ready for use by:
+    - Eliminating duplicates
+    - Removing deals that appeared in prior lists
+    - Filling missing data
+    - Filtering out non-Texas deals
+    - Sorting the final list in ascending order
+
+- **hurricane_harvey_matlab/**  
+  MATLAB Live Script analyzing Hurricane Harvey data, focusing on data wrangling and visualization.
 
 ## Technologies Used
 - Python (pandas)
 - MATLAB
-- Excel, CSV automation
+- Excel automation
 
 ## How to Use
 
