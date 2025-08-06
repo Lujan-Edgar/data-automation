@@ -1,2 +1,4 @@
 # data-automation
-My portfolio regarding data automation process I've used in my work
+My portfolio regarding data automation. This are some scripts that  I've used in my work to make work much easier for me and my team.
+In this repository I will be sharing my matlab and python scripts that I've effectively used to automate some tasks in my work, such as cleaning excel notebooks, automating repetitive processes and delivering organized results for my team at work.
+Usually I would start with an excel that contains a deal. This deals come from different states, for example Texas, Oklahoma, Nevada or California. Since my team was solely focused on working wih Texas deals, my goal was to deliver a well-structured excel for us to work efficiently without the need of constant tweaking. This also ensured we didn't have repeated data that could slow down our work. 
