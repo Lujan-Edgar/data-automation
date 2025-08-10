@@ -31,7 +31,7 @@ The focus is on **cleaning Excel notebooks, automating repetitive processes, and
 2. For Python notebooks: open in JupyterLab or Jupyter Notebook.
 3. For MATLAB scripts: open `.mlx` files in MATLAB R2020a or newer.
 4. Check the "data" section to obtain the docs neede for running each script.
-5. Some names of the files might be required since you will not be working with the original files.
+5. Some name changes to the files might be required, since you will not be working with the original files and their routes.
 
 ---
 
