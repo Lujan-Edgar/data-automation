@@ -5,18 +5,17 @@ The focus is on **cleaning Excel notebooks, automating repetitive processes, and
 
 ## Projects
 
-- **automate_deal_list/**  
-  Python (pandas) notebook for automating the UCC Filing process.  
-  This project was originally written as a MATLAB Live Script and allowed my team and I to automate the preparation of our shared Excel notebook for revision.  
-  In short, it reads a `.txt` file containing a list of deal names, and uses these names to automatically assign the status of each UCC document from "Sent" to "Done" (meaning it has been uploaded to the CRM).
-
 - **sort_ucc/matlab/**  
-  My second major contribution to the team. This MATLAB Live Script ensured our main Excel notebook was ready for use by:
+ This MATLAB Live Script ensured our main Excel notebook was ready for use by:
     - Eliminating duplicates
-    - Removing deals that appeared in prior lists
     - Filling missing data
     - Filtering out non-Texas deals
     - Sorting the final list in ascending order
+
+- **automate_deal_list/**  
+ My second major contribution. Python (pandas) notebook for automating the UCC Filing process.  
+  This project was originally written as a MATLAB Live Script and allowed my team and I to automate the preparation of our shared Excel notebook for revision.  
+  In short, it reads a `.txt` file containing a list of deal names, and uses these names to automatically assign the status of each UCC document from "Sent" to "Done" (meaning it has been uploaded to the CRM).
 
 - **hurricane_harvey_matlab/**  
   MATLAB Live Script analyzing Hurricane Harvey data, focusing on data wrangling and visualization.
