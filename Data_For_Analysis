@@ -1,1 +1,6 @@
-
+mv dummy_UCC_deals_2025.xlsx data/
+mv ucc_lists.txt data/
+git add data/dummy_UCC_deals_2025.xlsx data/ucc_lists.txt
+git rm dummy_UCC_deals_2025.xlsx ucc_lists.txt
+git commit -m "Move dummy data files into /data folder"
+git push origin main
