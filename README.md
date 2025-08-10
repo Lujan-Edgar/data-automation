@@ -30,7 +30,8 @@ The focus is on **cleaning Excel notebooks, automating repetitive processes, and
 1. Clone the repo or download the scripts.
 2. For Python notebooks: open in JupyterLab or Jupyter Notebook.
 3. For MATLAB scripts: open `.mlx` files in MATLAB R2020a or newer.
-4. Sample data and further instructions are in each project folder.
+4. Check the "data" section to obtain the docs neede for running each script.
+5. Some names of the files might be required since you will not be working with the original files.
 
 ---
 
