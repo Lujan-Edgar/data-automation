@@ -4,11 +4,13 @@
 
 This is a temporary script file.
 """
+#This script helps distributes the amount of work for the team. It even allows comparison between an old excel file and a new excel file to determine 
+#if deal are repeated or not.
+import sys
 from datetime import date
 import os
 import pandas as pd
 import numpy as np
-from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 from tkinter.filedialog import askdirectory
 Today = date.today().isoformat()
@@ -32,12 +34,17 @@ old_ucc= pd.read_excel(path2)
 old_ucc.columns = old_ucc.columns.str.strip()
 New_UCC.columns = New_UCC.columns.str.strip()
 New_UCC= New_UCC.sort_values(by='Deal Name', ascending=True)
-old_ucc= old_ucc.sort_values(by='DealName', ascending=True)
+old_ucc= old_ucc.sort_values(by='Deal Name', ascending=True)
 pd.set_option("display.max_columns", None)
 
 print("First column is deal names, second is UCC Filing status from the latest list and the third column is from the oldest list")
 #This works because "inner"looks for instances which are  in both dataframes and nothing more.
-Repeated_Deals =New_UCC.merge(old_ucc, left_on='Deal Name', right_on='DealName', how="inner")[["Deal Name", "UCC Filed",'UCCFiled']]
+#New_UCC= left & old_ucc=right. Use the suffixes to avoid any clash between the two columns since they are named the same.
+Repeated_Deals =New_UCC.merge(old_ucc, on='Deal Name', suffixes=("_new","_old"),how="inner")[['Deal Name', 'UCC Filed_new', 'UCC Filed_old']]
+new_deals = set(New_UCC['Deal Name'])
+old_deals = set(old_ucc['Deal Name'])
+intersection = new_deals.intersection(old_deals)
+print(f"Deals in both lists: {len(intersection)}")
 print(Repeated_Deals)
 mask = New_UCC['Deal Name'].isin(Repeated_Deals['Deal Name'])
 print("The previous list will be dropped from the latest excel file since they are dups.")
@@ -107,10 +114,9 @@ else:
             remaining = min(rows_per_person, len(New_UCC))
             chunk = New_UCC.iloc[0:remaining]
             print(chunk.head())
-            confirm = input(f"\nIs the result correct? {name} Excel will have {len(chunk)} rows. Type y/yes/n/no to continue: ").lower().strip()
+            confirm = input(f"\nIs the result correct? {name}'s Excel will have {len(chunk)} rows. Type y/yes/n/no to continue: ").lower().strip()
             if confirm== "no" or confirm== "n" :
                 print("Aborting distribution. No files saved.")
-                import sys
                 sys.exit()
             New_UCC = New_UCC.drop(index=range(0, len(chunk))) #drops from 0 to rows_per_person
             New_UCC.reset_index(drop=True, inplace=True) #resets index to continue with the next person
